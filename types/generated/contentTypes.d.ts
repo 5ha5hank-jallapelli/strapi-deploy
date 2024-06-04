@@ -368,6 +368,7 @@ export interface ApiFeatureFeature extends Schema.SingleType {
     singularName: 'feature';
     pluralName: 'features';
     displayName: 'feature';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -385,6 +386,12 @@ export interface ApiFeatureFeature extends Schema.SingleType {
         };
       }>;
     description: Attribute.Text &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    isLoading: Attribute.Boolean &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;

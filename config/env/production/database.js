@@ -1,4 +1,4 @@
-// path: ./config/env/staging/database.js
+// path: ./config/env/production/database.js
 
 const { parse } = require("pg-connection-string");
 
