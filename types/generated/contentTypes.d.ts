@@ -397,6 +397,12 @@ export interface ApiFeatureFeature extends Schema.SingleType {
           localized: true;
         };
       }>;
+    summary: Attribute.Text &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
