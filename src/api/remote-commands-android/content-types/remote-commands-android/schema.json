@@ -12,11 +12,6 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "page": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "admin::user"
-    },
     "h1": {
       "type": "string"
     },

@@ -375,11 +375,6 @@ export interface ApiRemoteCommandsAndroidRemoteCommandsAndroid
     draftAndPublish: true;
   };
   attributes: {
-    page: Attribute.Relation<
-      'api::remote-commands-android.remote-commands-android',
-      'oneToOne',
-      'admin::user'
-    >;
     h1: Attribute.String;
     paragraph: Attribute.Text;
     createdAt: Attribute.DateTime;
