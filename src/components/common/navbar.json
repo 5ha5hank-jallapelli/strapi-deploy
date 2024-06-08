@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_common_navbars",
+  "info": {
+    "displayName": "Navbar"
+  },
+  "options": {},
+  "attributes": {
+    "logo": {
+      "type": "string"
+    },
+    "features": {
+      "type": "component",
+      "repeatable": true,
+      "component": "nav-items.features"
+    }
+  }
+}

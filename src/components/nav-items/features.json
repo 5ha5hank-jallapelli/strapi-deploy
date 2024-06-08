@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_nav_items_features",
+  "info": {
+    "displayName": "Features",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "Link": {
+      "type": "component",
+      "repeatable": true,
+      "component": "common.nav-link"
+    }
+  }
+}

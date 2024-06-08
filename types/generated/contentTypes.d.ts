@@ -362,68 +362,41 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
-export interface ApiFeatureFeature extends Schema.SingleType {
-  collectionName: 'features';
+export interface ApiRemoteCommandsAndroidRemoteCommandsAndroid
+  extends Schema.SingleType {
+  collectionName: 'remote_commands_androids';
   info: {
-    singularName: 'feature';
-    pluralName: 'features';
-    displayName: 'feature';
+    singularName: 'remote-commands-android';
+    pluralName: 'remote-commands-androids';
+    displayName: 'RemoteCommands(Android)';
     description: '';
   };
   options: {
     draftAndPublish: true;
   };
-  pluginOptions: {
-    i18n: {
-      localized: true;
-    };
-  };
   attributes: {
-    title: Attribute.String &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    description: Attribute.Text &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    isLoading: Attribute.Boolean &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    summary: Attribute.Text &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
+    page: Attribute.Relation<
+      'api::remote-commands-android.remote-commands-android',
+      'oneToOne',
+      'admin::user'
+    >;
+    h1: Attribute.String;
+    paragraph: Attribute.Text;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
-      'api::feature.feature',
+      'api::remote-commands-android.remote-commands-android',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
     updatedBy: Attribute.Relation<
-      'api::feature.feature',
+      'api::remote-commands-android.remote-commands-android',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
-    localizations: Attribute.Relation<
-      'api::feature.feature',
-      'oneToMany',
-      'api::feature.feature'
-    >;
-    locale: Attribute.String;
   };
 }
 
@@ -863,7 +836,7 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
-      'api::feature.feature': ApiFeatureFeature;
+      'api::remote-commands-android.remote-commands-android': ApiRemoteCommandsAndroidRemoteCommandsAndroid;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::content-releases.release': PluginContentReleasesRelease;

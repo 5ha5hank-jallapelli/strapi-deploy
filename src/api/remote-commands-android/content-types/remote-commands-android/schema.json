@@ -1,0 +1,27 @@
+{
+  "kind": "singleType",
+  "collectionName": "remote_commands_androids",
+  "info": {
+    "singularName": "remote-commands-android",
+    "pluralName": "remote-commands-androids",
+    "displayName": "RemoteCommands(Android)",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "page": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "admin::user"
+    },
+    "h1": {
+      "type": "string"
+    },
+    "paragraph": {
+      "type": "text"
+    }
+  }
+}
