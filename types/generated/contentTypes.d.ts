@@ -368,6 +368,7 @@ export interface ApiNavbarNavbar extends Schema.CollectionType {
     singularName: 'navbar';
     pluralName: 'navbars';
     displayName: 'Navbar';
+    description: '';
   };
   options: {
     draftAndPublish: true;

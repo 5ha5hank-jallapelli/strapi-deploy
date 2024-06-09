@@ -30,7 +30,7 @@ export interface NavItemsFeatures extends Schema.Component {
   };
   attributes: {
     title: Attribute.String;
-    Link: Attribute.Component<'common.nav-link', true>;
+    links: Attribute.Component<'common.nav-link', true>;
   };
 }
 

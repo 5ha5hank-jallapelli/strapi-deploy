@@ -9,7 +9,7 @@
     "title": {
       "type": "string"
     },
-    "Link": {
+    "links": {
       "type": "component",
       "repeatable": true,
       "component": "common.nav-link"
