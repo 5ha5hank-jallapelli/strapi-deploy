@@ -362,6 +362,36 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
+export interface ApiNavbarNavbar extends Schema.CollectionType {
+  collectionName: 'navbars';
+  info: {
+    singularName: 'navbar';
+    pluralName: 'navbars';
+    displayName: 'Navbar';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    featuresMenu: Attribute.Component<'nav-items.features'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::navbar.navbar',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::navbar.navbar',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiRemoteCommandsAndroidRemoteCommandsAndroid
   extends Schema.SingleType {
   collectionName: 'remote_commands_androids';
@@ -377,6 +407,11 @@ export interface ApiRemoteCommandsAndroidRemoteCommandsAndroid
   attributes: {
     h1: Attribute.String;
     paragraph: Attribute.Text;
+    navbar: Attribute.Relation<
+      'api::remote-commands-android.remote-commands-android',
+      'oneToOne',
+      'api::navbar.navbar'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -831,6 +866,7 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
+      'api::navbar.navbar': ApiNavbarNavbar;
       'api::remote-commands-android.remote-commands-android': ApiRemoteCommandsAndroidRemoteCommandsAndroid;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;

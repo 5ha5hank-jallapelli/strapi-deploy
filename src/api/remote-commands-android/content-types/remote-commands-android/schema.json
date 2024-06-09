@@ -17,6 +17,11 @@
     },
     "paragraph": {
       "type": "text"
+    },
+    "navbar": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::navbar.navbar"
     }
   }
 }
