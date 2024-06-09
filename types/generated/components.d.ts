@@ -19,6 +19,7 @@ export interface CommonNavbar extends Schema.Component {
   attributes: {
     logo: Attribute.String;
     features: Attribute.Component<'nav-items.features', true>;
+    solutions: Attribute.Component<'nav-items.solutions', true>;
   };
 }
 
@@ -34,12 +35,24 @@ export interface NavItemsFeatures extends Schema.Component {
   };
 }
 
+export interface NavItemsSolutions extends Schema.Component {
+  collectionName: 'components_nav_items_solutions';
+  info: {
+    displayName: 'Solutions';
+  };
+  attributes: {
+    title: Attribute.String;
+    links: Attribute.Component<'common.nav-link', true>;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
       'common.nav-link': CommonNavLink;
       'common.navbar': CommonNavbar;
       'nav-items.features': NavItemsFeatures;
+      'nav-items.solutions': NavItemsSolutions;
     }
   }
 }

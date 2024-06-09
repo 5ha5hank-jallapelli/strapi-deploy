@@ -375,6 +375,7 @@ export interface ApiNavbarNavbar extends Schema.CollectionType {
   };
   attributes: {
     featuresMenu: Attribute.Component<'nav-items.features'>;
+    solutionsMenu: Attribute.Component<'nav-items.solutions'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

@@ -16,6 +16,11 @@
       "type": "component",
       "repeatable": false,
       "component": "nav-items.features"
+    },
+    "solutionsMenu": {
+      "type": "component",
+      "repeatable": false,
+      "component": "nav-items.solutions"
     }
   }
 }

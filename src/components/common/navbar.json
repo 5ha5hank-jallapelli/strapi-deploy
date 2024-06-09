@@ -12,6 +12,11 @@
       "type": "component",
       "repeatable": true,
       "component": "nav-items.features"
+    },
+    "solutions": {
+      "type": "component",
+      "repeatable": true,
+      "component": "nav-items.solutions"
     }
   }
 }
