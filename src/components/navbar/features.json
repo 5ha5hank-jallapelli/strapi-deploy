@@ -12,7 +12,7 @@
     "links": {
       "type": "component",
       "repeatable": true,
-      "component": "common.nav-link"
+      "component": "links.nav-link"
     }
   }
 }

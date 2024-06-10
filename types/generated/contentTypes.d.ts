@@ -362,76 +362,6 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
-export interface ApiNavbarNavbar extends Schema.CollectionType {
-  collectionName: 'navbars';
-  info: {
-    singularName: 'navbar';
-    pluralName: 'navbars';
-    displayName: 'Navbar';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    featuresMenu: Attribute.Component<'nav-items.features'>;
-    solutionsMenu: Attribute.Component<'nav-items.solutions'>;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::navbar.navbar',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::navbar.navbar',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiRemoteCommandsAndroidRemoteCommandsAndroid
-  extends Schema.SingleType {
-  collectionName: 'remote_commands_androids';
-  info: {
-    singularName: 'remote-commands-android';
-    pluralName: 'remote-commands-androids';
-    displayName: 'RemoteCommands(Android)';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    h1: Attribute.String;
-    paragraph: Attribute.Text;
-    navbar: Attribute.Relation<
-      'api::remote-commands-android.remote-commands-android',
-      'oneToOne',
-      'api::navbar.navbar'
-    >;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::remote-commands-android.remote-commands-android',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::remote-commands-android.remote-commands-android',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface PluginUploadFile extends Schema.CollectionType {
   collectionName: 'files';
   info: {
@@ -858,6 +788,147 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
+export interface ApiLocationTrackingLocationTracking extends Schema.SingleType {
+  collectionName: 'location_trackings';
+  info: {
+    singularName: 'location-tracking';
+    pluralName: 'location-trackings';
+    displayName: 'Location Tracking';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    h1: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    para: Attribute.Text &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    h5: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    navbar: Attribute.Relation<
+      'api::location-tracking.location-tracking',
+      'oneToOne',
+      'api::navbar.navbar'
+    >;
+    cards: Attribute.Component<'global.card', true> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::location-tracking.location-tracking',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::location-tracking.location-tracking',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::location-tracking.location-tracking',
+      'oneToMany',
+      'api::location-tracking.location-tracking'
+    >;
+    locale: Attribute.String;
+  };
+}
+
+export interface ApiNavbarNavbar extends Schema.CollectionType {
+  collectionName: 'navbars';
+  info: {
+    singularName: 'navbar';
+    pluralName: 'navbars';
+    displayName: 'Navbar';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    featuresMenu: Attribute.Component<'navbar.features'>;
+    solutionsMenu: Attribute.Component<'navbar.solutions'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::navbar.navbar',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::navbar.navbar',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiRemoteCommandsAndroidRemoteCommandsAndroid
+  extends Schema.SingleType {
+  collectionName: 'remote_commands_androids';
+  info: {
+    singularName: 'remote-commands-android';
+    pluralName: 'remote-commands-androids';
+    displayName: 'RemoteCommands(Android)';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    h1: Attribute.String;
+    paragraph: Attribute.Text;
+    navbar: Attribute.Relation<
+      'api::remote-commands-android.remote-commands-android',
+      'oneToOne',
+      'api::navbar.navbar'
+    >;
+    cards: Attribute.Component<'global.card', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::remote-commands-android.remote-commands-android',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::remote-commands-android.remote-commands-android',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -868,8 +939,6 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
-      'api::navbar.navbar': ApiNavbarNavbar;
-      'api::remote-commands-android.remote-commands-android': ApiRemoteCommandsAndroidRemoteCommandsAndroid;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::content-releases.release': PluginContentReleasesRelease;
@@ -878,6 +947,9 @@ declare module '@strapi/types' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
+      'api::location-tracking.location-tracking': ApiLocationTrackingLocationTracking;
+      'api::navbar.navbar': ApiNavbarNavbar;
+      'api::remote-commands-android.remote-commands-android': ApiRemoteCommandsAndroidRemoteCommandsAndroid;
     }
   }
 }

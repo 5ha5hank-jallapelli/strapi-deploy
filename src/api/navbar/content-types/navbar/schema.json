@@ -15,12 +15,12 @@
     "featuresMenu": {
       "type": "component",
       "repeatable": false,
-      "component": "nav-items.features"
+      "component": "navbar.features"
     },
     "solutionsMenu": {
       "type": "component",
       "repeatable": false,
-      "component": "nav-items.solutions"
+      "component": "navbar.solutions"
     }
   }
 }

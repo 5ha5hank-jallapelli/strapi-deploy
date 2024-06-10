@@ -1,9 +1,22 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
-export interface CommonNavLink extends Schema.Component {
+export interface GlobalCard extends Schema.Component {
+  collectionName: 'components_global_cards';
+  info: {
+    displayName: 'Card';
+  };
+  attributes: {
+    title: Attribute.String;
+    para: Attribute.Text;
+    icon: Attribute.Media;
+  };
+}
+
+export interface LinksNavLink extends Schema.Component {
   collectionName: 'components_common_nav_links';
   info: {
     displayName: 'NavLink';
+    description: '';
   };
   attributes: {
     label: Attribute.String;
@@ -11,19 +24,7 @@ export interface CommonNavLink extends Schema.Component {
   };
 }
 
-export interface CommonNavbar extends Schema.Component {
-  collectionName: 'components_common_navbars';
-  info: {
-    displayName: 'Navbar';
-  };
-  attributes: {
-    logo: Attribute.String;
-    features: Attribute.Component<'nav-items.features', true>;
-    solutions: Attribute.Component<'nav-items.solutions', true>;
-  };
-}
-
-export interface NavItemsFeatures extends Schema.Component {
+export interface NavbarFeatures extends Schema.Component {
   collectionName: 'components_nav_items_features';
   info: {
     displayName: 'Features';
@@ -31,28 +32,29 @@ export interface NavItemsFeatures extends Schema.Component {
   };
   attributes: {
     title: Attribute.String;
-    links: Attribute.Component<'common.nav-link', true>;
+    links: Attribute.Component<'links.nav-link', true>;
   };
 }
 
-export interface NavItemsSolutions extends Schema.Component {
+export interface NavbarSolutions extends Schema.Component {
   collectionName: 'components_nav_items_solutions';
   info: {
     displayName: 'Solutions';
+    description: '';
   };
   attributes: {
     title: Attribute.String;
-    links: Attribute.Component<'common.nav-link', true>;
+    links: Attribute.Component<'links.nav-link', true>;
   };
 }
 
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
-      'common.nav-link': CommonNavLink;
-      'common.navbar': CommonNavbar;
-      'nav-items.features': NavItemsFeatures;
-      'nav-items.solutions': NavItemsSolutions;
+      'global.card': GlobalCard;
+      'links.nav-link': LinksNavLink;
+      'navbar.features': NavbarFeatures;
+      'navbar.solutions': NavbarSolutions;
     }
   }
 }

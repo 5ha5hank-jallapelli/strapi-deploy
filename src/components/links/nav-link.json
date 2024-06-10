@@ -1,7 +1,8 @@
 {
   "collectionName": "components_common_nav_links",
   "info": {
-    "displayName": "NavLink"
+    "displayName": "NavLink",
+    "description": ""
   },
   "options": {},
   "attributes": {
