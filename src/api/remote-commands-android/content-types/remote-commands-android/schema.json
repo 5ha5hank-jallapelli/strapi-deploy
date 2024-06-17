@@ -27,6 +27,11 @@
       "type": "component",
       "repeatable": true,
       "component": "global.card"
+    },
+    "meta": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.seo"
     }
   }
 }

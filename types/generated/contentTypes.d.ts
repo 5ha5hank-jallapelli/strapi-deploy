@@ -834,6 +834,12 @@ export interface ApiLocationTrackingLocationTracking extends Schema.SingleType {
           localized: true;
         };
       }>;
+    meta: Attribute.Component<'seo.seo'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -911,6 +917,7 @@ export interface ApiRemoteCommandsAndroidRemoteCommandsAndroid
       'api::navbar.navbar'
     >;
     cards: Attribute.Component<'global.card', true>;
+    meta: Attribute.Component<'seo.seo'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

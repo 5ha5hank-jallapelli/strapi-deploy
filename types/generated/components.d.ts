@@ -48,6 +48,17 @@ export interface NavbarSolutions extends Schema.Component {
   };
 }
 
+export interface SeoSeo extends Schema.Component {
+  collectionName: 'components_seo_seos';
+  info: {
+    displayName: 'SEO';
+  };
+  attributes: {
+    metaTitle: Attribute.String;
+    metaDescription: Attribute.Text;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
@@ -55,6 +66,7 @@ declare module '@strapi/types' {
       'links.nav-link': LinksNavLink;
       'navbar.features': NavbarFeatures;
       'navbar.solutions': NavbarSolutions;
+      'seo.seo': SeoSeo;
     }
   }
 }
