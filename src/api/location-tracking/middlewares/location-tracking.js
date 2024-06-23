@@ -9,7 +9,8 @@ const { navbar } = require('../../../extensions/populate-navbar');
 const populate = {
   populate: [
     ...navbar,
-    'cards'
+    'cards',
+    'meta'
   ],
   publicationState: 'live'
 }
