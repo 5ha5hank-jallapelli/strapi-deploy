@@ -52,10 +52,12 @@ export interface SeoSeo extends Schema.Component {
   collectionName: 'components_seo_seos';
   info: {
     displayName: 'SEO';
+    description: '';
   };
   attributes: {
     metaTitle: Attribute.String;
     metaDescription: Attribute.Text;
+    og_image: Attribute.Media;
   };
 }
 
