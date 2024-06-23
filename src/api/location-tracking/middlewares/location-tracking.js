@@ -10,7 +10,7 @@ const populate = {
   populate: [
     ...navbar,
     'cards',
-    'meta'
+    'meta.og_image'
   ],
   publicationState: 'live'
 }
